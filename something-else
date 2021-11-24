@@ -15,4 +15,4 @@ metaphlan ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmg
 nohup megahit -t 8 -m 0.25 --min-contig-len 500 -1 ~/Metagenomics/cleandata/final_result/BHM.1.fq.gz -2 ~/Metagenomics/cleandata/final_result/BHM.2.fq.gz -o ~/Metagenomics/Assembly/megahit/BHM --k-min 21 --k-max 141 --k-step 10 &
 
 nohup metaspades.py -k 21,33,55,77,99,127  -1 ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmgalGal_abortus_psittaci.1.fq -2 ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmgalGal_abortus_psittaci.2.fq -o BH_metaspades_output &
-
+#第一次尝试使用 metaSPAdes 软件
