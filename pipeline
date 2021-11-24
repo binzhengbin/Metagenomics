@@ -9,5 +9,5 @@
 基于read的数据库分类：kaiju、metaphlan3、kraken2
 基于组装后的contig的微生物分类
 
-# Genome-assembly 基于read的基因组组装
+# Genome-assembly 基于read的基因组组装 
 read组装contig：megahit、metaspades、idba-ud
