@@ -4,4 +4,9 @@
 # Remove-host 去除宿主基因组
 2.使用bowtie2/bwa软件进行宿主基因组DNA的去除。
 
-#
+# Classification of microbes 微生物分类
+基于read的数据库分类/基于read组装以后的微生物分类
+基于read的数据库分类：kaiju、metaphlan3、kraken2
+read组装contig：megahit、metaspades、idba-ud
+基于组装后的contig的微生物分类
+
