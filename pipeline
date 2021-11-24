@@ -1,4 +1,3 @@
-fastqc
+# Quality-Control 第一步就对测序数据（fastq文件）进行测序质量控制检测。 
 使用fastqc软件对测序数据进行质量控制检查。
-
 fastp软件可以对测序数据进行质量控制，对低质量的read进行剪切。
