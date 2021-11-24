@@ -7,6 +7,7 @@
 # Classification of microbes 微生物分类
 基于read的数据库分类/基于read组装以后的微生物分类
 基于read的数据库分类：kaiju、metaphlan3、kraken2
-read组装contig：megahit、metaspades、idba-ud
 基于组装后的contig的微生物分类
 
+# Genome-assembly 基于read的基因组组装
+read组装contig：megahit、metaspades、idba-ud
