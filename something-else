@@ -1,0 +1,18 @@
+1.seqkit stats *.fq.gz --out-file *.txt 
+#代表计算文件内的信息，比如碱基数量，序列数量，以及最短或者最长的序列长度等.并输出到文件txt中。
+
+2021.11.19 利用筛选的bowtie2参数对去宿主后的数据进行二次处理
+nohup bowtie2 -p 24 -x ~/Metagenomics/cleandata/bowtie2/end-to-end/galGal6/galGal6 -1 ~/Metagenomics/cleandata/final_result/BH.1.fq.gz -2 ~/Metagenomics/cleandata/final_result/BH.2.fq.gz --un-conc BH_rmgalGal.fq --al-conc BH_algalGal.fq -S BH.sam --end-to-end --score-min L,-0.65,-0.65 &
+
+bowtie2 -p 16 -x ~/Metagenomics/cleandata/bowtie2/end-to-end/galGal6/galGal6 -1 ~/Metagenomics/cleandata/final_result/BX.1.fq.gz -2 ~/Metagenomics/cleandata/final_result/BX.2.fq.gz --un-conc BX_rmgalGal.fq --al-conc BX_algalGal.fq -S BX.sam --local &
+
+metaphlan --install &  (wd: ~/miniconda3/envs/py3/lib/python3.9/site-packages/metaphlan/metaphlan_databases)
+# metaphlan3数据库的储存路径
+
+2021.11.23 
+metaphlan ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmgalGal_abortus_psittaci.1.fq ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmgalGal_abortus_psittaci.2.fq --input_type fastq --nproc 6 > BH_metaphlan.txt &
+
+nohup megahit -t 8 -m 0.25 --min-contig-len 500 -1 ~/Metagenomics/cleandata/final_result/BHM.1.fq.gz -2 ~/Metagenomics/cleandata/final_result/BHM.2.fq.gz -o ~/Metagenomics/Assembly/megahit/BHM --k-min 21 --k-max 141 --k-step 10 &
+
+nohup metaspades.py -k 21,33,55,77,99,127  -1 ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmgalGal_abortus_psittaci.1.fq -2 ~/Metagenomics/cleandata/final_result/second-time-rm-host/local/BH_rmgalGal_abortus_psittaci.2.fq -o BH_metaspades_output &
+
